@@ -6,6 +6,8 @@ This repo contains the code to run the methods developed in the paper: _Machine 
 - Code for processing sequencing data from MiSeq pair-end sequencing into training data
 - Code for training models on sequence data
 
+We have also included the model checkpoints for the models trained on the `AT110` dataset for comparisons.
+
 
 ---
 
