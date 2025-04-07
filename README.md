@@ -11,7 +11,7 @@ This repo contains the code to run the methods developed in the paper: _Machine 
 
 ### Data download
 
-The fastq sequencing files for the AT110, NbB7 and RX002 affinity maturation campaigns can be downloaded from: [www.link.com]
+We have provided here the ML-ready datasets for each campaign in the `data` folder. Each folder contains a `X.csv` and a `Y.csv` file which contain the sequences and enrichment labels needed to train ML models. The raw fastq sequencing files for the affinity maturation campaigns were not provided as the files are very large. However, we have provided  code for processing fastq files into aligned datasets, and then for packaging the aligned datasets into ML-ready formats. See contents of `fastq_processing`.
 
 ---
 
