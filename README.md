@@ -11,7 +11,7 @@ We have also included the model checkpoints for the models trained on the `AT110
 
 ---
 
-### Data download
+### Data processing
 
 We have provided here the ML-ready datasets for each campaign in the `data` folder. Each folder contains a `X.csv` and a `Y.csv` file which contain the sequences and enrichment labels needed to train ML models. The raw fastq sequencing files for the affinity maturation campaigns were not provided as the files are very large. However, we have provided  code for processing fastq files into aligned datasets, and then for packaging the aligned datasets into ML-ready formats. See contents of `fastq_processing`.
 
