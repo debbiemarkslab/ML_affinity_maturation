@@ -1,0 +1,47 @@
+--------------------------------------------
+Protocol for processing new sequencing data.
+--------------------------------------------
+
+Written 2023.04.21
+
+-1) Get the correct barcodes for the data you're going to work with. Sometimes whatever barcodes we get from the Kruse lab don't work for IDing where the sequences actually start and end. One alternative is to get the WT DNA sequence and use the first three and last three codons as "barcodes".
+
+0) Run "conda activate /home/stp022/.conda/envs/bioinf" to use this envrionment
+
+1) Make a new folder for the campaign.Make a new folder for the sequencing file.
+    Label it describing the sequencing data
+
+2) Make new folders within called:
+    "fastq" (where you will put the uncompressed fastq files - .fastq not .fastq.gz)
+    "logs" (for batch scripts to run later)
+
+3) Make a copy of "scripts/Fastq_processing_template.ipynb", "scripts/fastq_processing_workflow.sh" and "generate_numbering_template.sh"
+    The script is for processing the DNA sequences using bash scripts
+    The notebook is for processing the DNA into protein. A notebook is useful for looking at the sequences
+    to make sure they look correct
+    The script is opimized for processing pair end sequencing results
+    
+4) Running the fastq_processing_workflow.sh script
+
+    - Store the pair of sequencing results as {NAME}_R1_001.fastq and {NAME}_R2_001.fastq
+    - Set the URNAME to be the final name of the single round
+    - If the sequencing results are in multiple batches add the names of those batches
+        into the main for loop
+
+5) Running the Fastq_processing notebook
+    - Get the forward and reverse primers for doing barcoding matching
+    - Make sure the beginning and end of the "correct nanoboy" matching chunk is correct for
+      the data youre using
+      
+      
+6) ANARCI alignment with generate_numbering.sh
+    - "source activate /n/groups/marks/users/phil/anaconda2_tf" to use the correct env
+    - MAKE A LOGS folder for the batch file
+    - You'll need approx 3.7min of runtime for every 10k sequences in the fasta
+    
+    
+7) Retrieve WT alignment
+    - Go to the online ANARCI server (https://opig.stats.ox.ac.uk/webapps/sabdab-sabpred/sabpred/anarci/)
+    - Paste in the WT protein sequence
+    - download the result and put it in the folder for this campaign and call it "aligned_WT_sequence.csv"
+
